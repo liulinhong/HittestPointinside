@@ -12,7 +12,7 @@
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
     UIView *touchView = self;
-    if ([self pointInside:point withEvent:event])
+    if ([self pointInside:point withEvent:event] && self.alpha >= 0.01 && !self.hidden && self.isUserInteractionEnabled)
     {
         if ([self.subviews count] > 0)
         {
